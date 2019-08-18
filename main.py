@@ -21,7 +21,7 @@ def main():
 
     # list of sort algorithms saved independently
     import bubble_sort as b
-
+    import counting_sort as c
     '''
     boring stuff: list to sort, capturing verbosity level, and setting a timer
     '''
@@ -33,8 +33,8 @@ def main():
 
 
     ######## tweak code / options below  ###########
-    A = b.bubble_sort(A, verbose, desc)
-
+    #A = b.bubble_sort(A, verbose, desc)
+    A = c.counting_sort(A, verbose, desc)
     ########## end of modifiable section ###########
 
     '''
