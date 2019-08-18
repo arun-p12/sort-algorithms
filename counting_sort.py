@@ -8,7 +8,7 @@ update the list (count) as cumulative. (i.e. A[x] += A[x-1] where x=1..n-1
 scan original list right to left; from it, get key of count list, decrement count index ...
 update output list with key at index provided by count
 '''
-def counting_sort(A, verbose=False, desc=False):
+def counting_sort(A, verbose=0, desc=0):
     import common as c
     #A = [-1, 3, 4, 6, 7, 8, 2, 5, 1, 1, 1, 5, 7, 8, 9]
 
@@ -25,7 +25,8 @@ def counting_sort(A, verbose=False, desc=False):
         count[A[i]] += 1                # create histogram/count of occurances
     for i in range(1, len(count)):      # update list as a cumulative set
         count[i] += count[i-1]
-    #if(verbose): print("count list :: ", count)
+        if(verbose == 2): print("  sub: ", i, " :: ", count[i], count[i-1])
+    #if(verbose == 2): print("count list :: ", count)
 
     # update output array
     B = [0 for x in range(n)]

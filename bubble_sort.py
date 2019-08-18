@@ -9,7 +9,7 @@ element is already sorted.
 To further optimize, check if in a pass, there has been no swapping. If true, then it means the
 list is already sorted, and we can stop right at the end of that pass.
 '''
-def bubble_sort(A, verbose=False, desc=False):
+def bubble_sort(A, verbose=0, desc=0):
     import common as c
     for i in range(len(A)):
         swapped = 0
@@ -17,6 +17,7 @@ def bubble_sort(A, verbose=False, desc=False):
             if(A[j] > A[j+1]):              # only worry about ascending order
                 (A[j], A[j+1]) = c.swap(A[j], A[j+1])
                 swapped = 1
+            if(verbose == 2): print("  sub:", j, " :: ", A)
         if(verbose): print("iter #", i, " :: ", A)
         if(not swapped): break              # early exit if already sorted.
     if(desc): A = A[::-1]                   # if descending read list from right to left
