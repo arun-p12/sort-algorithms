@@ -26,11 +26,11 @@ Each sort function invoked within the main routine, takes three arguments. Namel
 The default is to work on the standard list (`[3, 14, 27, 12, 31, -6, 945643, 95, 0, 18, 5, 3, 980]`), sort in the ascending order, and with verbose print statements turned off.
 
 For the worst-case scenario, use a fully sorted list, and then sort it in the reverse order.
-- E.g. `bubble_sort(bubble_sort(A), True, True)`
-- The inner `bubble_sort(A)` routine uses the defaut values for `verbose` and `descending`. Which is False, and False
-- Thus, the list will get sorted in the ascending order.
-- You can use that output, and feed as the input to the outer sort function, asking it to provide `verbose` output and sort in the `descending` order
+- E.g. `bubble_sort(bubble_sort(A, True, True), True)`
+- The inner `bubble_sort(A, True, True)` routine sorts in `descending` order, with verbose output.
+- Its output is then fed as the input to the outer sort function, asking it to provide `verbose` output and sort in the `ascending` order
 - Of course, you can mix and match algorithms too.
+
 ## Executive Summary
 
 <table>
