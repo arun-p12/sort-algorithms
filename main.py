@@ -6,22 +6,32 @@ def main():
     def step_thru_code():
         import argparse
 
-        verbose, desc = False, False
-        text = 'Some helper message about the program'
+        verbose, desc = 0, 0
+        text = 'Control program for the various sort algorithms'
         # initiate the parser
         parser = argparse.ArgumentParser()
-        parser.add_argument("-v", "--verbose", action='store_true',
-                            help='activate verbose print statements')
+        parser.add_argument("-v", "--verbose",
+                            help='activate verbose print statements [1 | 2]')
         parser.add_argument("-d", "--descending", action='store_true',
                             help='sort in descending order')
         args = parser.parse_args()
-        if args.verbose: verbose = True
-        if args.descending: desc = True
+        if args.verbose:
+            if(args.verbose in ['1', '2']): verbose = int(args.verbose)
+        if args.descending: desc = 1
         return(verbose, desc)
 
     # list of sort algorithms saved independently
     import bubble_sort as b
     import counting_sort as c
+    import heap_sort as h
+    import insertion_sort as i
+    import merge_sort as m
+    import radix_sort as r
+    import selection_sort as s
+    import selection_insertion_sort as si
+    import shell_sort as sh
+    import quick_sort as q
+
     '''
     boring stuff: list to sort, capturing verbosity level, and setting a timer
     '''
@@ -33,12 +43,22 @@ def main():
 
 
     ######## tweak code / options below  ###########
+
     #A = b.bubble_sort(A, verbose, desc)
-    A = c.counting_sort(A, verbose, desc)
+    #A = c.counting_sort(A, verbose, desc)
+    #A = h.heap_sort(A, verbose, desc)
+    #A = i.insertion_sort(A, verbose, desc)
+    #A = m.merge_sort(A, verbose, desc)
+    #A = r.radix_sort(A, verbose, desc)
+    #A = s.selection_sort(A, verbose, desc)
+    #A = si.selection_insertion_sort(A, verbose, desc)
+    #A = sh.shell_sort(A, verbose, desc)
+    A = q.quick_sort(A, verbose, desc)
+
     ########## end of modifiable section ###########
 
     '''
-    more boring stuff: record the time, print the output result, and the time taken
+    more boring stuff: stop the timer, print the output result, and the time taken
     '''
     t = time.time() - t             # and now, after the routine
     print("sorted     = ", A)       # we want to see the output, don't we!?
