@@ -11,19 +11,23 @@ main.py                  the master control file
 
 ## How to Use
 ```buildoutcfg
-python3 main.py [-d | --descending] [-v | --verbose]
+python3 main.py [-d|--descending] [-v|--verbose]
 ```
-Each sort function takes a standard set of optional arguments
 ```buildoutcfg
   -h, --help        show this help message and exit
   -v, --verbose     activate verbose print statements
   -d, --descending  sort in descending order
 ```
+Each sort function invoked within the main routine, takes three arguments. Namely, the list to the sorted, verbosity flag, and if the list should be sorted in ascending or descending order. 
+```
+<algorithm>_sort(A, verbose=False, desc=False)
+```
 
+The default is to work on the standard list (`[3, 14, 27, 12, 31, -6, 945643, 95, 0, 18, 5, 3, 980]`), sort in the ascending order, and with verbose print statements turned off.
 
 For the worst-case scenario, use a fully sorted list, and then sort it in the reverse order.
-- E.g. `bubble_sort(bubble_sort(A), True, False)`
-- The inner `bubble_sort(A)` routine uses the defaut values for `verbose` and `asc`. Which is False, and True
+- E.g. `bubble_sort(bubble_sort(A), True, True)`
+- The inner `bubble_sort(A)` routine uses the defaut values for `verbose` and `descending`. Which is False, and False
 - Thus, the list will get sorted in the ascending order.
 - You can use that output, and feed as the input to the outer sort function, asking it to provide `verbose` output and sort in the `descending` order
 - Of course, you can mix and match algorithms too.
@@ -31,10 +35,10 @@ For the worst-case scenario, use a fully sorted list, and then sort it in the re
 
 <table>
 <tr>
-<td> Algorithm </td>
-<td> Description </td>
-<td> Time Complexity </td>
-<td> Space Complexity </td>
+<td> <b>Algorithm</b> </td>
+<td> <b>Description</b> </td>
+<td> <b>Time Complexity</b> </td>
+<td> <b>Space Complexity</b> </td>
 </tr>
 
 <tr>
