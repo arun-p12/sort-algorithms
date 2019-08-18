@@ -20,14 +20,14 @@ python3 main.py [-d|--descending] [-v|--verbose]
 ```
 Each sort function invoked within the main routine, takes three arguments. Namely, the list to the sorted, verbosity flag, and if the list should be sorted in ascending or descending order. 
 ```
-<algorithm>_sort(A, verbose=False, desc=False)
+<algorithm>_sort(A, verbose=0, desc=0)
 ```
 
 The default is to work on the standard list (`[3, 14, 27, 12, 31, -6, 945643, 95, 0, 18, 5, 3, 980]`), sort in the ascending order, and with verbose print statements turned off.
 
 For the worst-case scenario, use a fully sorted list, and then sort it in the reverse order.
-- E.g. `bubble_sort(bubble_sort(A, True, True), True)`
-- The inner `bubble_sort(A, True, True)` routine sorts in `descending` order, with verbose output.
+- E.g. `bubble_sort(bubble_sort(A, 1, 1), 1)`
+- The inner `bubble_sort(A, 1, 1)` routine sorts in `descending` order, with verbose output.
 - Its output is then fed as the input to the outer sort function, asking it to provide `verbose` output and sort in the `ascending` order
 - Of course, you can mix and match algorithms too.
 
